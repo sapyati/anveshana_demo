@@ -1,0 +1,47 @@
+<form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+  <!-- room select  -->
+  <p><strong>Selected Room</strong> : {{selectedRoom.roomName}}</p>
+  <p><strong>Selected Date</strong> : {{dateTimeForm.value.bookingDateFrom | date:'dd/MM/yyyy' }} <strong>to</strong> {{dateTimeForm.value.bookingDateTo | date:'dd/MM/yyyy' }}</p>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <!-- from time -->
+      <div class="form-group" [ngClass]="{'has-error': !rForm.controls['bookedTimeFrom'].valid && rForm.controls['bookedTimeFrom'].touched}">
+        <label for="meetingName">Select From Time</label>
+        <timepicker [showMeridian]="ismeridian" formControlName="bookedTimeFrom" (ngModelChange)="timeChanged($event, rForm.controls['bookedTimeTo'].value)"></timepicker>        
+        <span class="help-block" *ngIf="fromTimeError">
+          {{fromTimeError}}
+        </span>
+      </div>
+    </div>    
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <!-- to time -->
+      <div class="form-group" [ngClass]="{'has-error': !rForm.controls['bookedTimeTo'].valid && rForm.controls['bookedTimeTo'].touched}">
+        <label for="meetingName">Select To Time</label>
+        <timepicker [showMeridian]="ismeridian" formControlName="bookedTimeTo" (ngModelChange)="timeChanged(rForm.controls['bookedTimeFrom'].value, $event)"></timepicker>
+        <span class="help-block" *ngIf="toTimeError">
+          {{toTimeError}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- meeting/conference name -->
+  <div class="form-group" [ngClass]="{'has-error': !rForm.controls['meetingName'].valid && rForm.controls['meetingName'].touched}">
+    <label for="meetingName">Event Name</label>
+    <input type="text" class="form-control" id="meetingName" placeholder="Event Name" formControlName="meetingName" (keyup)="timeChanged(rForm.controls['bookedTimeFrom'].value, rForm.controls['bookedTimeTo'].value)">
+    <span class="help-block" *ngIf="!rForm.controls['meetingName'].valid
+                && rForm.controls['meetingName'].touched && !rForm.controls['meetingName'].errors?.minlength">
+      This field is required
+    </span>
+    <span class="help-block" *ngIf="!rForm.controls['meetingName'].valid
+                    && rForm.controls['meetingName'].touched && rForm.controls['meetingName'].errors?.minlength">
+      You need to specify atleast 3 characters
+    </span>
+  </div>  
+
+  <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid || fromTimeError || toTimeError">Submit</button>
+</form>

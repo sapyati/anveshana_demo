@@ -1,0 +1,361 @@
+.header {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 5px 0px;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d61360+1,48aad9+100 */
+    background: #d61360; /* Old browsers */
+    background: -moz-linear-gradient(left, #d61360 1%, #48aad9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #d61360 1%,#48aad9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #d61360 1%,#48aad9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d61360', endColorstr='#48aad9',GradientType=1 ); /* IE6-9 */
+    bottom: -5px;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  }
+  &__brand{
+    height: auto;
+    padding: 5px 0px;
+    float: left;
+    img {
+      height: 40px;
+      padding-right: 0px;
+      border-left: 0px;
+      float: left;
+    }
+  }
+  &__app-name{
+    padding: 5px 0px;
+    margin-left: 30px;
+    padding-left: 30px;
+    margin-top: 5px;
+    border-left: 1px solid #9B9B9B;
+    float: left;
+    img {
+      height: 30px;
+      padding-right: 0px;
+      border-left: 0px;
+      float: left;
+    }
+  }
+  &__logout {
+    margin-left: 15px;
+  }
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+.st0{opacity:0.86;}
+.st1{fill:#F1F2F2;}
+.st2{fill:none;stroke:#01395A;stroke-width:4;stroke-miterlimit:10;}
+.st3{fill:#FEF7DB;stroke:#063659;stroke-width:0.5;stroke-miterlimit:10;}
+.st4{fill:#01395A;}
+.st5{fill:#DBE2EA;stroke:#01395A;stroke-width:4;stroke-miterlimit:10;}
+.st-blue {
+  fill: #428BCA;
+  stroke-miterlimit: 10;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.st-blue:hover {
+  fill: rgb(2, 96, 189);
+  transition: all 100ms ease;
+}
+.st-green {
+  fill: #5CB85C;
+  stroke-miterlimit: 10;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.st-green:hover {
+  fill: rgb(0, 139, 42);
+  transition: all 100ms ease;
+}
+.st-red {
+  fill: #BC9034;
+  stroke-miterlimit: 10;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.st-red:hover {
+  fill: rgb(136, 93, 0);
+  transition: all 100ms ease;
+}
+.st-selected {
+  transition: all 300ms ease;
+  opacity: 1;
+}
+
+.booked-by-container {  
+  max-height: 360px;
+  overflow-y: auto;
+  p {
+    margin-bottom: 5px;
+  }
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.booked-by {
+  padding: 10px;
+  background: #3D77B0;
+  margin-bottom: 0px; 
+  h3 {
+    margin: 0px;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    small {
+      text-transform: capitalize;
+      color: #fff;
+    }
+  }
+  p {
+    margin-bottom: 5px;
+    color: #fff;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.c-tab {
+  &__nav {
+    text-align: center;
+    background: #fff;
+    // border: 1px solid rgba(198, 199, 201,0.7);
+  }
+  &__nav-item {
+    cursor: pointer;
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    margin: 0px 5px;
+    padding: 10px;
+    font-size: 18px;
+    position: relative;
+    color: #D61360;
+    &--active:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d61360+1,48aad9+100 */
+      background: #43A8DA; /* Old browsers */
+      background: -moz-linear-gradient(left, #43A8DA 1%, #A0CB4A 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, #43A8DA 1%,#A0CB4A 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, #43A8DA 1%,#A0CB4A 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43A8DA', endColorstr='#A0CB4A',GradientType=1 ); /* IE6-9 */
+      bottom: -3px;
+      left: 0px;
+    }
+  }
+  &__content {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header {
+    &__user {
+      display: block;
+      float: none !important;
+      text-align: right;
+      line-height: normal !important;
+      clear: both;
+      border-top: 1px solid #D7D7D9;
+      margin-top: 5px;
+      padding-top: 5px;
+    }
+    &__app-name {
+      width: 50%;
+      display: block;
+      margin-left: 0px;
+      padding-left: 30px;
+      float: right;
+      border: none;
+    }
+    &__brand {
+      width: 40%;
+      display: block;
+    }
+    &__logout {
+      padding: 0px 5px;
+    }
+  }
+
+  .c-tab {
+  &__nav {
+    text-align: center;
+  }
+  &__nav-item {
+    text-align: center;
+    display: inline-block;
+    width: 120px;
+    font-size: 16px;
+  }
+}
+
+.booked-by-container {
+  height: auto;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  
+}
+
+.table-responsive {
+  background: #fff;
+}
+
+.dateTimeForm {
+  padding: 15px 15px 0px 15px;
+  background: #fff;
+  // border: 1px solid rgba(198, 199, 201,0.7);
+}
+
+.c-box {
+  padding: 15px 15px 15px 15px;
+  background: #fff;
+  border: 1px solid rgba(198, 199, 201,0.7);
+  margin-top: 15px;
+  &__title {
+    margin-bottom: 15px;
+    position: relative;
+    > h3 {
+      margin: 0px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+      position: relative;
+      margin-bottom: 15px;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d61360+1,48aad9+100 */
+        background: #43A8DA; /* Old browsers */
+        background: -moz-linear-gradient(left, #43A8DA 1%, #A0CB4A 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #43A8DA 1%,#A0CB4A 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #43A8DA 1%,#A0CB4A 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43A8DA', endColorstr='#A0CB4A',GradientType=1 ); /* IE6-9 */
+        bottom: -15px;
+        left: 0px;
+      }
+      small {
+        font-size: 12px;
+        text-transform: capitalize;
+        color: #48A9D8;
+        font-weight: bold;
+      }
+    } 
+  }
+  &__content {
+    padding-top: 15px;
+  }
+  &-map {
+    svg {
+      vertical-align: middle;
+    }
+  }
+  &-details {
+    padding-bottom: 0px;
+  }
+}
+
+.c-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px; /* Set the fixed height of the footer here */
+  &__copy-text {
+    margin-bottom: 0px;
+    text-align: center;
+    line-height: 40px;
+    color: #333;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d61360+1,48aad9+100 */
+    background: #43A8DA; /* Old browsers */
+    background: -moz-linear-gradient(left, #43A8DA 1%, #A0CB4A 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #43A8DA 1%,#A0CB4A 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #43A8DA 1%,#A0CB4A 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43A8DA', endColorstr='#A0CB4A',GradientType=1 ); /* IE6-9 */
+    top: -5px;
+  }
+}
+
+.c-svg-help {
+  position: relative;
+  margin-left: 13px;
+  &__section {
+    display: inline-block;
+  }
+  &__green, &__blue, &__red {
+    display: inline-block;
+  }
+  &__green {
+    width: 30px;
+    height: 30px;
+    margin-right: 80px;
+    background: rgb(0, 139, 42);
+    position: relative;
+    &:after {
+      content: "Available";
+      position: absolute;
+      top: 5px; 
+      right: -70px;
+      font-weight: bold;
+    }
+  }
+  &__blue {
+    width: 30px;
+    height: 30px;
+    margin-right: 130px;
+    background: #428BCA;
+    position: relative;
+    &:after {
+      content: "Partially Booked";
+      position: absolute;
+      top: 5px; 
+      right: -120px;
+      font-weight: bold;
+    }
+  }
+  &__red {
+    width: 30px;
+    height: 30px;
+    margin-right: 130px;
+    background: #BC9034;
+    position: relative;
+    &:after {
+      content: "Fully Booked";
+      position: absolute;
+      top: 5px; 
+      right: -100px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+
